@@ -11,7 +11,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
 
         Persona persona = new Persona("grauso ", "francesco", 27, 8, 2002, "M",
-                "MASSA DI SOMMA");
+                "MASSA DI SOMMA");a
 
         // prendo le due liste di nome cognome (le scelte per il cf)
         List<Character> cognome_cf_lista = persona.cognome_cf();

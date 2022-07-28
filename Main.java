@@ -1,5 +1,6 @@
 /*Modifica effettuata da Nicola Piccirillo il giorno 28/07/2022*/
 /*Modifica effettuata: Acquisione dei dati da input per il calcolo del codice fiscale*/
+package codicefiscale;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,24 +27,9 @@ public class Main {
         /*Acquisione dell'anno di nascita da tastiera*/
         System.out.println("Inserire l'anno di nascita: ");
         int annonascita = input.nextInt();
-        boolean f = false;
-        String M = "M";
-        String F = "F";
-        String sesso;
-        while(f==true)
-        {
-                /*Acquisione del sesso da tastiera*/
-                System.out.println("Inserire il sesso della persona(INSERIE M o F): ");
-                sesso = input.nextLine();
-                if(sesso.equals(M))
-                {
-                        f = true;
-                }
-                else if(sesso.equals(F))
-                {
-                        f = true;
-                }
-        }
+        /*Acquisione del sesso da tastiera*/
+        System.out.println("Inserire il sesso della persona(INSERIE M o F): ");
+        String sesso = input.nextLine();
         /*Acquisione del comune di nascita da tastiera*/
         System.out.println("Inserisci il comune di nascita: ");
         String comune = input.nextLine();

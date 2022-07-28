@@ -1,4 +1,4 @@
-package cf;
+package codicefiscale;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -220,14 +220,17 @@ public class Persona {
     // funzione che ritorna ultime 2 cifre dell'anno di nascita
     public String giorno_sesso_cf() {
         String res = null;
-        if (this.sesso.toUpperCase() == "M") {
+        if (this.sesso.equals("M")) {
+            System.out.println("sono nel ciclo");
             int length = String.valueOf(this.giorno_nascita).length();
             if (length == 1) {
+                System.out.println("sono nel ciclo 2");
+
                 res = "0" + String.valueOf(this.giorno_nascita);
             } else {
                 res = String.valueOf(this.giorno_nascita);
             }
-        } else if (this.sesso.toUpperCase() == "F") {
+        } else if (this.sesso.equals("F")) {
             int somma = this.giorno_nascita + 40;
             res = String.valueOf(somma);
         }
@@ -240,7 +243,7 @@ public class Persona {
     public String luogo_nascita_cf() throws IOException {
         List<String> risultati_matchati = new ArrayList<String>();
         String linea_matchata = null;
-        List<String> lines = Files.readAllLines(Paths.get("codicefiscalecalcolatore/comuni.txt"));
+        List<String> lines = Files.readAllLines(Paths.get("codicefiscale/comuni.txt"));
         for (String line : lines) {
             if (line.contains(this.luogo_nascita.toUpperCase())) {
                 risultati_matchati.add(line);

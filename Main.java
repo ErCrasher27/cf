@@ -1,19 +1,53 @@
-package codicefiscalecalcolatore;
-
+/*Modifica effettuata da Nicola Piccirillo il giorno 28/07/2022*/
+/*Modifica effettuata: Acquisione dei dati da input per il calcolo del codice fiscale*/
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
+        
 public class Main {
-        //commento di nicola 
     public static void main(String[] args) throws IOException {
         // git repo added
 
         Scanner input = new Scanner(System.in);
-
-        Persona persona = new Persona("grauso ", "francesco", 27, 8, 2002, "M",
-                "MASSA DI SOMMA");
+        
+        /*Acquisione del cognome da tastiera*/
+        System.out.println("Inserire il cognome della persona: ");
+        String cognome = input.nextLine();
+        /*Acquisione del nome da tastiera*/
+        System.out.println("Inserire il nome della persona: ");
+        String nome = input.nextLine();
+        /*Acquisione del giorno di nascita da tastiera*/
+        System.out.println("Inserire il giorno di nascita: ");
+        int giornonascita = input.nextInt();
+        /*Acquisione del mese di nascita da tastiera*/
+        System.out.println("Inserire il mese di nascita(INSERIRE IL NUMERO DEL MESE COMPRESO TRA 1 e 12): ");
+        int mesenascita = input.nextInt();
+        /*Acquisione dell'anno di nascita da tastiera*/
+        System.out.println("Inserire l'anno di nascita: ");
+        int annonascita = input.nextInt();
+        boolean f = false;
+        String M = "M";
+        String F = "F";
+        String sesso;
+        while(f==true)
+        {
+                /*Acquisione del sesso da tastiera*/
+                System.out.println("Inserire il sesso della persona(INSERIE M o F): ");
+                sesso = input.nextLine();
+                if(sesso.equals(M))
+                {
+                        f = true;
+                }
+                else if(sesso.equals(F))
+                {
+                        f = true;
+                }
+        }
+        /*Acquisione del comune di nascita da tastiera*/
+        System.out.println("Inserisci il comune di nascita: ");
+        String comune = input.nextLine();
+        Persona persona = new Persona(cognome,nome,giornonascita,mesenascita,annonascita,sesso,comune);
 
         // prendo le due liste di nome cognome (le scelte per il cf)
         List<Character> cognome_cf_lista = persona.cognome_cf();
